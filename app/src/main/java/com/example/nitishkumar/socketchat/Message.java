@@ -5,9 +5,11 @@ package com.example.nitishkumar.socketchat;
  */
 
 public class Message {
-    public static final int TYPE_MESSAGE=0;
+    public static final int TYPE_MESSAGE_RECEIVED=0;
     //new user is a log
     public static final int TYPE_LOG=1;
+
+    public static final int TYPE_MESSAGE_SENT=2;
 
 
     private int mType;

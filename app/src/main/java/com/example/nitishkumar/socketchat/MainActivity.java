@@ -208,7 +208,7 @@ public class MainActivity extends AppCompatActivity {
                         e.printStackTrace();
                     }
 
-                    addMessage(username,message);
+                    addMessage(username,message,Message.TYPE_MESSAGE_RECEIVED);
                 }
             });
         }
@@ -307,8 +307,8 @@ public class MainActivity extends AppCompatActivity {
         scrollUp();
     }
 
-    private void addMessage(String username,String message){
-        messageList.add(new Message(Message.TYPE_MESSAGE,username,message));
+    private void addMessage(String username,String message, int messageType){
+        messageList.add(new Message(messageType,username,message));
         mAdapter.notifyItemInserted(messageList.size()-1);
         scrollUp();
     }
@@ -339,7 +339,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         editMessage.setText("");
-        addMessage(mUsername, message);
+        addMessage(mUsername, message,Message.TYPE_MESSAGE_SENT);
 
         // perform the sending message attempt.
         mSocket.emit("new message", message);
