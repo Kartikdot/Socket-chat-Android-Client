@@ -12,7 +12,7 @@ import io.socket.client.Socket;
  */
 
 public class ChatApp extends Application {
-    private final String CHAT_URL="http://<your-ip-here>/";
+    private final String CHAT_URL="https://salty-lowlands-83532.herokuapp.com/";
     private Socket mSocket;
     {
         try {
